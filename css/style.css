@@ -1,0 +1,288 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/halloween1.jpg");
+    background-color: black;
+    color: white;
+}
+.container{
+    text-align: center;
+    overflow: hidden;
+}
+
+nav{
+    animation-name: navAni;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transition: all 0.4s;
+}
+
+@keyframes navAni{
+    0%{transform: translateY(-4rem);}
+}
+
+nav ul li{
+    background-color: #f30606;
+    border-radius: 5px;
+    display: inline;
+    font-size: 2rem;
+    padding: 1rem;
+    width: 16rem;
+    margin: 3rem 0;
+}
+
+nav ul li:hover{
+    background-color: #000000;
+    color: black;
+    cursor: pointer;
+}
+
+main{
+    background-color: #000000;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: 150%;
+    overflow: hidden;
+    animation-name: mainAnimation;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    transition: all 0.4s;
+}
+
+main ul li {
+    display: inline;
+    margin-right: 3rem;
+}
+
+@keyframes mainAnimation{
+    0% {opacity: 0; transform: translateX(100rem);}
+    100%{opacity: 1;}
+}
+
+main h1, h3{
+    margin-top: 4rem;
+    color: #fcfcfc;
+}
+
+main div {
+    width: 70%;
+    text-align: center; 
+    margin: 2rem auto;
+}
+
+main a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 10vw);
+    gap: 10px;
+}
+
+.gallery-image{
+    display: block;
+    height: 100%;
+    width: 100%;
+    outline-offset: 0.1rem;
+    transition: 1s ease-in-out;
+}
+
+.gallery_image:hover{
+    outline: 1.8rem solid #fafafa;
+    transform: scale(1.10);
+    z-index: 20;
+}
+
+img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.image1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.image2{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.image3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.image4{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+.ghost-container{
+    width: 400px;
+    height: 400px;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: -10rem;
+}
+
+#spooky{
+    margin: 10% auto;
+    width: 80%;
+    height: 80%;
+    animation: floaty 2s infinite;
+}
+
+#spooky #body{
+    position: relative;
+    margin: 50px auto 0;
+    width: 180px;
+    height: 220px;
+    background: white;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+}
+
+#spooky #body:before, 
+#spooky #body:after{
+    content: '';
+    position: absolute;
+    top: 130px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    animation: floaty .2s infinite;
+}
+
+#spooky #body:before{
+    left: -18px;
+}
+
+#spooky #body:after{
+    right: -18px;
+}
+
+#spooky #body #eyes{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 90px 0 0;
+    width: 90px;
+    height: 20px;
+}
+
+#spooky #body #eyes:before,
+#spooky #body #eyes:after{
+    content: ' ';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: black;
+    border-radius: 50%;
+}
+
+#spooky #body #mouth{
+    background: black;
+    margin: 35px auto 0;
+    width: 60px;
+    height: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#spooky #body #mouth:before{
+    content: ' ';
+    display: block;
+    background: white;
+    margin-left: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+#spooky #body #feet{
+    position: absolute;
+    display: flex;
+    bottom: -18px;
+    height: 36px;
+}
+
+#spooky #body #feet > *, 
+#spooky #body #feet::before, 
+#spooky #body #feet::after {
+    content: '  ';
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+}
+
+@keyframes floaty{
+    0%, 100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+}
+
+.bottom-link{
+    display: inline-block;
+    align-items: center;
+    margin: 1rem;
+}
+
+.li-wrapper{
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: 0 auto;
+    width: auto;
+}
+
+.li-wrapper a {
+    text-decoration: none;
+    color: #eb6123;
+}
+
+footer{
+    margin-top: 2rem;
+}
+
+.copyright{
+    font-size: 1.4rem;
+}
+
+@media(max-width: 768px){
+    .bottom-link{
+        display: block;
+        align-items: center;
+        width: 0 auto;
+    }
+}
+
+
+@media(max-width: 480px){
+    .bottom-link{
+        display: block;
+        align-items: center;
+        margin: 1rem;
+    }
+}
